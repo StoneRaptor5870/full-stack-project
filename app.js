@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 
-import AppError from './utils/appError.js';
+//import AppError from './utils/appError.js';
 
 const app = express();
 app.enable('trust proxy');
