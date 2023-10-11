@@ -7,11 +7,11 @@ import hpp from 'hpp';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
-
+import userRouter from './routes/userRoutes.js';
 //import AppError from './utils/appError.js';
 
 const app = express();
-app.enable('trust proxy');
+//app.enable('trust proxy');
 
 app.use(cors());
 app.options('*', cors());
@@ -44,9 +44,7 @@ app.use(ExpressMongoSanitize());
 app.use(compression());
 
 //routes
-app.use('/', (req, res) => {
-  res.send('Hello to Full Stack Project');
-});
+app.use('/api/v1/users', userRouter);
 
 // app.all('*', (req, res, next) => {
 //   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
